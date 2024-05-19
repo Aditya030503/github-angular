@@ -1,0 +1,37 @@
+
+<div class="w-full bg-slate-900 h-screen">
+   <div class=" flex flex-col w-11/12 h-full mx-auto mt-5">
+      <div class=" flex gap-10  items-center text-white mt-5">
+         <div class=" rounded-full overflow-hidden w-[300px] h-[300px] bg-white">
+             <img src={{imgurl}} alt="" width="300px " height="300px">
+         </div>
+         <div>
+             <h1 class=" font-extrabold text-lg  ">{{name}}</h1>
+             <p>{{bio}}</p>
+             <p>{{location}}</p>
+          <p>{{twitter}}</p>
+          
+         </div>
+ 
+      </div>
+ 
+      <p>
+         https://github.com/<span>{{username}} </span>
+       
+      </p>
+ 
+      <div class=" grid grid-cols-3 gap-x-5 gap-y-2 ">
+       
+        <div  class="w-[400px] border-2 border-white p-2 " *ngFor="let item of userRepos  |  paginate: { itemsPerPage: 9, currentPage: currentPage }" >
+        
+          <app-card [userlannge]="item.full_name" ></app-card>
+       </div>
+ 
+      </div>
+ 
+      <pagination-controls (pageChange)="currentPage=$event" class=" fixed m-auto inset-x-0 -bottom-5 bg-white flex justify-center items-center mb-0 py-2 text-black "></pagination-controls>
+ 
+ </div>
+</div>
+
+<!-- <ngx-skeleton-loader count="5" appearance="circle" /> -->

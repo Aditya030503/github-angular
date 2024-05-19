@@ -1,0 +1,20 @@
+<div class=" w-[500px] justify-center m-auto mt-20 bg-slate-800 rounded-[0.5rem]">
+
+    <form [formGroup]="searchForm" (ngSubmit)="sendUser()" class=" w-[500px] flex flex-col  gap-y-4 mt-6 p-8">
+      <label for="username">
+
+            <p class="text-[0.875rem] text-white text-lg mb-4 leading-[1.375rem]">Username</p>
+        <input type="text" name="username" formControlName="username"   id="username"
+        class=" rounded-[0.5rem] text-richblack-5 w-full p-[12px]">
+      </label>
+
+
+        <button
+        class=" bg-yellow-50 rounded-[8px] font-medium text-lg text-slate-950 px-[12px] py-[8px] mt-3 mb-2"
+        >Search</button>
+    </form>
+
+
+
+   
+</div>
